@@ -46,7 +46,7 @@ const projectController = {
             }
             //Si le projet existe, on vérifie que l'utilisateur peut modifier le projet, et on le modifie ensuite
             if (project.userId == userId) {
-                projectUpdated = await Project.updateOne({ _id: projectId }, { $set: { projectName: projectName, projectDescription: projectDescription } });
+                const projectUpdated = await Project.updateOne({ _id: projectId }, { $set: { projectName: projectName, projectDescription: projectDescription } });
                 //Vérification de la modification du projet
                 if (projectUpdated.modifiedCount === 1) {
                     return res.status(200).json("Projet mis à jour avec succès");
