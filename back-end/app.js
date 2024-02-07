@@ -1,6 +1,7 @@
 const expres = require('express');
 const app = expres();
 const PORT = process.env.PORT || 3000;
+const userRoutes = require('./src/routes/userRoutes');
 
 //mongoose
 const mongoose = require('mongoose');
@@ -12,7 +13,9 @@ db.once('open', () => {
     console.log("Coonecté à Mongo DB");
 });
 
-app.use(expres.json());
+app
+.use(expres.json())
+.use("/api/user", userRoutes);
 
 //On lance le serveur
 app.listen(PORT, () => {
