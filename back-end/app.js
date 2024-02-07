@@ -1,7 +1,11 @@
 const expres = require('express');
 const app = expres();
 const PORT = process.env.PORT || 3000;
+
 const userRoutes = require('./src/routes/userRoutes');
+const projectRoutes = require('./src/routes/projectRoutes');
+
+const isAuthenticated = require('./src/middlewares/authentification');
 
 //mongoose
 const mongoose = require('mongoose');
@@ -15,7 +19,8 @@ db.once('open', () => {
 
 app
 .use(expres.json())
-.use("/api/user", userRoutes);
+.use("/api/user", userRoutes)
+.use("/api/project", isAuthenticated, projectRoutes);
 
 //On lance le serveur
 app.listen(PORT, () => {
