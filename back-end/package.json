@@ -1,0 +1,17 @@
+{
+  "name": "ecf_07-02-2024",
+  "version": "1.0.0",
+  "description": "évaluation ecf 07/02/2024, application de gestion de projet avec un back en API REST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Florian Delafosse",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1"
+  }
+}
