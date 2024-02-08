@@ -19,7 +19,7 @@ async function login() {
     await authStore.fetchLogin(dataUser);
     username.value = "";
     password.value = "";
-    if (localStorage.getItem("jwt")) {
+    if (localStorage.getItem("monde__de_merde_")) {
       router.push("/user")
     }
 }
@@ -57,6 +57,11 @@ form{
 #lien-signup{
   display: block;
   text-align: end;
+}
+
+button{
+  background-color: rgb(0, 104, 74) ;
+  color: white ;
 }
 
 

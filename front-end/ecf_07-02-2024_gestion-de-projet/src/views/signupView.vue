@@ -23,7 +23,7 @@ async function inscription() {
             password: password.value,
         };
         await authStore.fetchSignup(dataUser);
-        if (localStorage.getItem("jwt")) {
+        if (localStorage.getItem("monde__de_merde_")) {
           router.push("/user")
         }
     }
@@ -60,7 +60,7 @@ async function inscription() {
 
         <br />
         <hr />
-        <RouterLink to="/" id="lien-signup">Déja un compte? Cliquez-ici</RouterLink>
+        <RouterLink to="/" id="lien-signup">Déja un compte? Cliquez là-bas</RouterLink>
     </form>
 </template>
 
@@ -75,5 +75,10 @@ form {
 #lien-signup {
     display: block;
     text-align: end;
+}
+
+button{
+  background-color: rgb(0, 104, 74) ;
+  color: white ;
 }
 </style>

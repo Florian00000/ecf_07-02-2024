@@ -13,7 +13,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
-    if (localStorage.getItem("jwt")) {
+    if (localStorage.getItem("monde__de_merde_")) {
         return true;
     } else if (to.fullPath.startsWith('/user'))return '/'
     return true;

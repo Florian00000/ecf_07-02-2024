@@ -1,5 +1,13 @@
 <script setup>
 import { RouterView } from 'vue-router';
+import { useRoute, useRouter } from "vue-router";
+
+const router = useRouter();
+
+function logout(){
+  localStorage.removeItem("monde__de_merde_");
+  router.push("/");
+}
 
 </script>
 
@@ -8,6 +16,7 @@ import { RouterView } from 'vue-router';
     <!-- As a link -->
 <nav class="navbar ">
   <a class="navbar-brand text-white" href="#">Navbar</a>
+  <button class="btn btn-outline-light" v-on:click="logout">déconnexion</button>
 </nav>
   
   </header>
@@ -28,5 +37,7 @@ nav{
 main{
   height: 92dvh;
 }
+
+
 
 </style>
