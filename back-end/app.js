@@ -1,6 +1,7 @@
 const expres = require('express');
 const app = expres();
 const PORT = process.env.PORT || 3000;
+const cors = require('cors');
 
 const userRoutes = require('./src/routes/userRoutes');
 const projectRoutes = require('./src/routes/projectRoutes');
@@ -21,6 +22,7 @@ db.once('open', () => {
 
 app
 .use(expres.json())
+.use(cors())
 .use("/api/user", userRoutes)
 .use("/api/project", isAuthenticated, projectRoutes)
 .use("/api/task", isAuthenticated, taskRoutes);

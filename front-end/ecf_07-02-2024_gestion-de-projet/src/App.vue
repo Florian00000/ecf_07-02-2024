@@ -5,16 +5,28 @@ import { RouterView } from 'vue-router';
 
 <template>
   <header>
-    
+    <!-- As a link -->
+<nav class="navbar ">
+  <a class="navbar-brand text-white" href="#">Navbar</a>
+</nav>
   
   </header>
 
-  <main>
+  <main class="container">
     <RouterView/>
   </main>
   
 </template>
 
 <style scoped>
+
+nav{
+  background-color: rgb(0, 104, 74);  
+  height: 8dvh;
+}
+
+main{
+  height: 92dvh;
+}
 
 </style>
